@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Estimation de bien</h1>
+
+    <form action="{{ url_for('predict')}}"method="post">
+		<input type="number" step="0.0000000001" max="200" name="surface_reelle_bati" placeholder="Surface batie du bien ( ne dépasse pas 200 m² )" required="required" />
+		<input type="number" name="nombre_pieces_principales" placeholder="Nombre des pieces principales avec salon" required="required" />
+		<input type="number" step="0.0000000001" name="longitude" placeholder="Longitude"  />
+		<input type="number" step="0.0000000001" name="latitude" placeholder="Latitude"  />
+		<input type="number" step="0.0000000001" name="distance_mer" placeholder="Nombre de places ou autres dependances" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Valider</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
