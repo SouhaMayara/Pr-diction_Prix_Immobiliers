@@ -6,7 +6,7 @@ import pickle
 
 
 # Importing the dataset
-dataset = pd.read_csv('Data - Test technique PFE 8.csv',delimiter=';')
+dataset = pd.read_csv('Data - Test.csv',delimiter=';')
 
 
 X = dataset.iloc[:,2:-1].values
